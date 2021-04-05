@@ -1,10 +1,70 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 body {
   margin: 0;
+  background-color: lightslategray;
+}
+
+button {
+  cursor: pointer;
 }
 
 .App {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 810px;
+  height: 100vh;
+}
+
+.modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 470px;
+  height: 260px; /* TODO: Make height dynamic */
+  background: white;
+  border-radius: 4px;
+  transition: 200ms ease-out;
+}
+
+.modal.hasType {
+  transform: translateX(-170px);
+  height: 720px;
+}
+
+.preview {
+  position: absolute;
+  right: 0;
+  width: 330px;
+  height: 254px; /* TODO: Make height dynamic */
+  background: white;
+  border-radius: 4px;
+}
+
+/* Preview transition states */
+.preview-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.preview-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: 200ms ease-out;
+  transition-delay: 200ms;
+}
+.preview-exit {
+  opacity: 1;
+}
+.preview-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: 200ms ease-out;
 }
