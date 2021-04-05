@@ -44,16 +44,39 @@ export default function App() {
 
 const Modal = ({ term, updateTerm }) => (
   <div class={term.type ? 'modal hasType' : 'modal'}>
-    <button name="type" value="approved" onClick={updateTerm}>
-      APPROVED
-    </button>
-    <button name="type" value="dontUse" onClick={updateTerm}>
-      DON'T USE
-    </button>
-    <button name="type" value="pending" onClick={updateTerm}>
-      PENDING
-    </button>
+    <div className="button-container">
+      <button
+        className={`toggle-button green ${
+          term.type === 'approved' ? 'active' : ''
+        }`}
+        name="type"
+        value="approved"
+        onClick={updateTerm}
+      >
+        APPROVED
+      </button>
+      <button
+        className={`toggle-button red ${
+          term.type === 'dontUse' ? 'active' : ''
+        }`}
+        name="type"
+        value="dontUse"
+        onClick={updateTerm}
+      >
+        DON'T USE
+      </button>
+      <button
+        className={`toggle-button yellow ${
+          term.type === 'pending' ? 'active' : ''
+        }`}
+        name="type"
+        value="pending"
+        onClick={updateTerm}
+      >
+        PENDING
+      </button>
+    </div>
   </div>
 );
 
-const Preview = ({ term }) => <div className="preview">preview</div>;
+const Preview = ({ term }) => <div className="preview">Preview</div>;

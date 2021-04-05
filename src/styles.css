@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
-  background-color: lightslategray;
+  background-color: #e6e8eb;
 }
 
 button {
@@ -11,7 +20,6 @@ button {
 
 .App {
   font-family: 'Poppins', sans-serif;
-  text-align: center;
 }
 
 .container {
@@ -23,6 +31,7 @@ button {
 }
 
 .modal {
+  padding: 24px;
   position: absolute;
   left: 0;
   right: 0;
@@ -33,6 +42,8 @@ button {
   background: white;
   border-radius: 4px;
   transition: 200ms ease-out;
+  box-shadow: 0px 3px 40px rgba(172, 185, 220, 0.4);
+  z-index: 100;
 }
 
 .modal.hasType {
@@ -41,12 +52,16 @@ button {
 }
 
 .preview {
+  padding: 24px;
   position: absolute;
   right: 0;
   width: 330px;
   height: 254px; /* TODO: Make height dynamic */
   background: white;
   border-radius: 4px;
+  box-shadow: 0px 3px 40px rgba(172, 185, 220, 0.4);
+  font-weight: 600;
+  font-size: 16px;
 }
 
 /* Preview transition states */
@@ -67,4 +82,64 @@ button {
   opacity: 0;
   transform: scale(0.9);
   transition: 200ms ease-out;
+}
+
+/* Cosmetic styles */
+.button-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+.toggle-button {
+  border-radius: 4px;
+  height: 30px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 2.34px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  background-color: #ddfdf3;
+  transition: 100ms;
+  box-shadow: 0 0 0 0px transparent;
+}
+.toggle-button.green {
+  background-color: #ddfdf3;
+}
+.toggle-button.green:hover {
+  background-color: #a9f9e1;
+  box-shadow: 0 0 0 2px #3bdcab;
+}
+.toggle-button.green.active {
+  background-color: #a9f9e1;
+  box-shadow: 0 0 0 2px #3bdcab;
+}
+
+.toggle-button.red {
+  background-color: #ffefeb;
+}
+.toggle-button.red:hover {
+  box-shadow: 0 0 0 2px #ff8866;
+  background-color: #ffd8cd;
+}
+.toggle-button.red.active {
+  box-shadow: 0 0 0 2px #ff8866;
+  background-color: #ffd8cd;
+}
+
+.toggle-button.yellow {
+  background-color: #fff6d6;
+}
+.toggle-button.yellow:hover {
+  box-shadow: 0 0 0 2px #ffb800;
+  background-color: #ffe999;
+}
+.toggle-button.yellow.active {
+  box-shadow: 0 0 0 2px #ffb800;
+  background-color: #ffe999;
 }
