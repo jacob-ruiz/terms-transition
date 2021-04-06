@@ -76,6 +76,9 @@ const Modal = ({ term, updateTerm }) => (
         PENDING
       </button>
     </div>
+    <div className={`content ${term.type !== null ? 'visible' : ''}`}>
+      modal content
+    </div>
   </div>
 );
 
